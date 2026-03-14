@@ -1,16 +1,17 @@
 import os
+from adminf.admin import admin_menuList
 # Login system section
 def login (role):
     # Initilize attempt
     attempt = 0
     while attempt < 3:
       # user input their username and password.
-      username = input("Enter your username: ")
-      password = input("Enter your password: ")
+      username = input("Enter username: ")
+      password = input("Enter password: ")
 
       # path directery
-      path = os.path.dirname(__file__)
-      actualPath = os.path.join(path,'..','textfolder','main_menu.txt')
+      base_dir = os.path.dirname(__file__)
+      actualPath = os.path.join(base_dir,'..','textfolder','main_menu.txt')
       # open the file
       with open(actualPath,'r') as f:
         users = f.readlines()
@@ -35,15 +36,15 @@ def login (role):
         
         #  check the role,if role is equal to admin then run admin function
         if role == 'admin':
-            print ("This is admin dashboard")
-            # break
+            admin_menuList()
+           
         
         elif role == 'staff':
             print ("This is staff dashboard")
-            # break
+           
         elif role == 'customer':
             print ("This is customer dashboard")
-            # break
+            
         
         else:
            return

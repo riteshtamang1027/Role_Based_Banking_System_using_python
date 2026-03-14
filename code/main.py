@@ -1,28 +1,28 @@
-from login import login
+from loginf.login import login
 # create main function
 def main():
     print("----- Banking Role System -----")
     roles = ['1. Admin','2. Staff','3. Customer']
     # list roles 
-    for list in roles:
-        print(list)
+    for item in roles:
+        print(item)
     print('-'*30)
     # choose user role by users
-    choice = int(input("Choose your role: "))
+    choice = input("Choose your role: ")
     return choice
 # execuite the program while user choose invalide number. 
 while True:
     choose = main()
     # checking the user choosen number and role based number.
-    if choose == 1:
+    if choose == "1":
         login('admin')
-        break
-    elif choose == 2:
+        
+    elif choose == "2":
         login('staff')
-        break
-    elif choose == 3:
+        
+    elif choose == "3":
         login('customer')
-        break
+        
     # if the user choose  out of the role then show this message.
     else:
         print("Invalide choice!")
