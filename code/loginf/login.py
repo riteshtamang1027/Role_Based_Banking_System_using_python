@@ -38,7 +38,6 @@ def login (role):
         if role == 'admin':
             admin_menuList()
            
-        
         elif role == 'staff':
             print ("This is staff dashboard")
            
