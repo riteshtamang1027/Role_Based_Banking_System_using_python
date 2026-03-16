@@ -10,11 +10,11 @@ def search_staff():
         users = f.readlines()
         for user in users:
             item = user.strip().split(",")
-            username = item[0]
-            password = item[1]
-            role =item[2]
-            email= item[3]
-            user_id = item[4]
+
+            if len(item) <5:
+                continue
+
+            username, password, role, email, user_id = item
 
             if  search_user == email or search_user == user_id:
                 print("----- Here is a user information -----")

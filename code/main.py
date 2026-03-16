@@ -21,8 +21,13 @@ while True:
         login('staff')
         
     elif choose == "3":
-        login('customer')
+       login('customer')
         
     # if the user choose  out of the role then show this message.
     else:
-        print("Invalide choice!")
+        print("Invalid choice!")
+
+        
+
+
+
