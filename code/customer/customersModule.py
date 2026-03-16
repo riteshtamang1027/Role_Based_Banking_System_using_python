@@ -5,20 +5,21 @@ transaction_file = "transactions.txt" #store deposit and withdraw records
 
 
 # -------- Customer Login --------
-def login():
-    acc = input("Enter account number: ") #The program ask for customer acc num and pass
-    pas = input("Enter password: ")
 
-    with open(customer_file, "r") as f: #open customer.txt in read mode
-        for line in f:
-            data = line.strip().split(",") #each line from the file is read
+# def login():
+#     acc = input("Enter account number: ") #The program ask for customer acc num and pass
+#     pas = input("Enter password: ")
 
-            if acc == data[0] and pas == data[3]:#check acc no and pass matches
-                print("Login successful")
-                customer_menu(data) #login sucessfully customer menu open
-                return
+#     with open(customer_file, "r") as f: #open customer.txt in read mode
+#         for line in f:
+#             data = line.strip().split(",") #each line from the file is read
 
-    print("Invalid account or password")
+#             if acc == data[0] and pas == data[3]:#check acc no and pass matches
+#                 print("Login successful")
+#                 customer_menu(data) #login sucessfully customer menu open
+#                 return
+
+#     print("Invalid account or password")
 
 
 # -------- Deposit --------
@@ -120,4 +121,4 @@ def customer_menu(data):
 
 
 # Start program
-login()
+# login()

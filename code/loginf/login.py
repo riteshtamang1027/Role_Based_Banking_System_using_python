@@ -5,21 +5,19 @@ from customer.customersModule import customer_menu
 
 # Login system section
 def login (role):
-    # Initilize attempt
+    # Initialize attempt  
     attempt = 0
     while attempt < 3:
-      # user input their username and password.
+      # user input their username and password to login.
       username = input("Enter username: ")
       password = input("Enter password: ")
-
       # path directery current path detector
       base_dir = os.path.dirname(__file__)
       # provides the path
       actualPath = os.path.join(base_dir,'..','textfolder','main_menu.txt')
-      # open the file
+      # open the file and read
       with open(actualPath,'r') as f:
         users = f.readlines()
-
   # variable to track if login is successful
       login_success = False
 
@@ -31,10 +29,6 @@ def login (role):
            continue
         # unpacking the values from data 
         file_username,file_password,file_role = data
-        # file_username= data[0]
-        # file_password= data[1]
-        # file_role = data[2]
-      
       # compare the user input data and file data
         if username == file_username and password == file_password and role == file_role:
           login_success = True
@@ -53,9 +47,7 @@ def login (role):
           
         #  check the role,if role is equal to customer then run customer function
         elif role == 'customer':
-             customer_menu()
-            
-        
+             customer_menu(data) 
         else:
            return
       
